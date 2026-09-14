@@ -34,6 +34,6 @@
 - ESLint enforces `import/order`: builtin → external → internal → parent/sibling → index, alphabetized, blank line between groups.
 - Prettier is wired through ESLint (`plugin:prettier/recommended`); single quotes, trailing commas, print width 100.
 
-## Role in Nick's health stack (2026-09-13)
+## Role in Nick's health stack (2026-09-13; corrected 2026-09-14)
 
-Runs on nlc-server (Proxmox Docker LXC; global skill `nlc-server`). The iPhone Health Auto Export app posts to `POST /api/data`. BioHackz's `scripts/import-apple-health.cjs` will gain an `--from-hae <url>` source reading `GET /api/metrics/:metric` with the read token instead of `export.xml`; that is a follow-up plan in the BioHackz repo.
+**Not deployed yet.** The iPhone Health Auto Export app currently posts to the Mac-side receiver (`~/.hermes/scripts/health-receiver.py`, over Tailscale), not to this server. This fork is kept to track upstream and as the reference for the HAE REST API (`POST /api/data`, `GET /api/metrics/:metric`). BioHackz's `scripts/import-apple-health.cjs` will gain an `--from-hae <url>` source; the deployment host is undecided. Follow-up plan lives in the BioHackz repo.
